@@ -64,6 +64,7 @@ remotely.
 The target machine will have the IP as shown:
 
 ![image](https://github.com/Rugeniere/UAC-Bypass-2023/assets/73703319/23d2ac14-fcb2-4d43-b7f8-1116d9ea2a96)
+
 *4. IP Windows (target)*
 
 While the attacking machine running Ubuntu 22.04 will have ip:
