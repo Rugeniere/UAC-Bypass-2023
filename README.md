@@ -49,14 +49,22 @@ available.
 
 *1. List of Windows Update patches installed on the system*
 
+
+
+
 ![image](https://github.com/Rugeniere/UAC-Bypass-2023/assets/73703319/c26f4a81-832a-4923-af3b-b87165e95371)
 
 *2. Windows Update - update to the latest available version released*
+
+
+
 
 Windows Defender is correctly active in all its features
 ![image](https://github.com/Rugeniere/UAC-Bypass-2023/assets/73703319/1b235a9a-2110-490a-b14b-7dca5bc91487)
 
 *3. Windows Defender features*
+
+
 
 ## PoC:
 We can assume that an attacker is already inside the target machine with an administrative user (in this
@@ -159,13 +167,22 @@ attacking machine creating a reverse shell with integrity level “high ”
 
 *8. Execute commands writing values to the system registry and calling revs.exe*
 
+
+
+
 ![image](https://github.com/Rugeniere/UAC-Bypass-2023/assets/73703319/63bb6a96-bc59-4c04-a8d6-fea8d550b07e)
 
 *9.Target Windows GET request to the attacking server*
 
+
+
+
 ![image](https://github.com/Rugeniere/UAC-Bypass-2023/assets/73703319/2b3bcfec-ab43-4a22-aeeb-81880beb86fb)
 
 *10. Reverse shell integrity level obtained by the attacking machine*
+
+
+
 
 We can also notify how Windows Defender did not get alarmed during operations and let us reach the goal
 without its interference
@@ -173,6 +190,8 @@ without its interference
 ![image](https://github.com/Rugeniere/UAC-Bypass-2023/assets/73703319/b0d9c77d-32a8-4b17-9ff8-db21e1abdfc7)
 
 *11. No threats detected by Windows Defender*
+
+
 
 In this last image demonstrating the elevation of privileges, the integrity level (medium) of the powershell
 on which we executed the commands is shown
